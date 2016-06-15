@@ -94,6 +94,7 @@ def store_module_result(data):
 def module_runner(module):
     task_queue.put(1)
     result = sys.modules[module].run()
+    print "[*] result:\n",result
     task_queue.get()
     
     store_module_result(result)
